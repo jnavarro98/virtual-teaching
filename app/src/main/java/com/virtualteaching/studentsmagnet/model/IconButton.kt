@@ -5,6 +5,6 @@ import androidx.annotation.DrawableRes
 
 data class IconButton(
     val title: String,
-    @DrawableRes val imageId: Int,
+    @DrawableRes val image: Int,
     val intentUri: Uri
 )
