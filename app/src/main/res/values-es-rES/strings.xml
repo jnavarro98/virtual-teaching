@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Virtual Teaching</string>
+    <string name="subtitle"><u>Aprende ingles desde casa</u></string>
+    <string name="sign_up">Registro</string>
+    <string name="timetable">Horarios</string>
+    <string name="rate_us">¿Como lo hicimos?</string>
+    <string name="follow_us">Siguenos!</string>
+    <string name="contact_us">Contactanos</string>
+</resources>

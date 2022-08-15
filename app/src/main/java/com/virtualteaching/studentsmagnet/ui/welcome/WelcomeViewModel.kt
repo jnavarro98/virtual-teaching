@@ -12,14 +12,20 @@ class WelcomeViewModel(val dataSource: DataSource) : ViewModel() {
 
     val iconButtonLiveData = dataSource.getIconButtonList()
 
-    fun insertIconButton(iconButtonIcon: Int?, iconButtonTitle: String?) {
+    fun insertIconButton(
+        iconButtonIcon: Int?,
+        iconButtonTitle: String?,
+        uri: Uri?,
+        instagramProfile: String?
+    ) {
         if (iconButtonIcon == null || iconButtonTitle == null) {
             return
         }
         val newIconButton = IconButton(
             iconButtonTitle,
             iconButtonIcon,
-            Uri.EMPTY
+            uri,
+            instagramProfile
         )
 
         dataSource.addIconButton(newIconButton)
@@ -33,9 +39,32 @@ class WelcomeViewModelFactory(private val context: Context) : ViewModelProvider.
             @Suppress("UNCHECKED_CAST")
             return WelcomeViewModel(
                 dataSource = DataSource.getDataSource(listOf(
-                    IconButton("Sign up", R.drawable.ic_baseline_app_registration, Uri.parse(context.getString(R.string.register_url))),
-                    IconButton("Check timetable", R.drawable.ic_baseline_calendar, Uri.parse(context.getString(R.string.calendar_url))),
-                    IconButton("Rate us", R.drawable.ic_black_star_filled, Uri.parse(context.getString(R.string.review_url)))
+                    IconButton(
+                        context.getString(R.string.sign_up),
+                        R.drawable.ic_baseline_app_registration,
+                        Uri.parse(context.getString(R.string.register_url))
+                    ),
+                    IconButton(
+                        context.getString(R.string.timetable),
+                        R.drawable.ic_baseline_calendar,
+                        Uri.parse(context.getString(R.string.calendar_url))
+                    ),
+                    IconButton(
+                        context.getString(R.string.rate_us),
+                        R.drawable.ic_black_star_filled,
+                        Uri.parse(context.getString(R.string.review_url))
+                    ),
+                    IconButton(
+                        context.getString(R.string.follow_us),
+                        R.drawable.ic_instagram,
+                        Uri.EMPTY,
+                        "virtual.teaching.es"
+                    ),
+                    IconButton(
+                        context.getString(R.string.contact_us),
+                        R.drawable.ic_whatsapp,
+                        Uri.parse("https://api.whatsapp.com/send?phone=+34613550464")
+                    )
                 ))
             ) as T
         }
