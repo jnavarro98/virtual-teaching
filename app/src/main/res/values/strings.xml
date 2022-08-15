@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">Virtual Teaching</string>
+    <string name="calendar_url">https://calendar.google.com/calendar/u/0/r?cid=dmlydHVhbHRlYWNoaW5nZXNAZ21haWwuY29t</string>
+    <string name="register_url">https://docs.google.com/forms/d/e/1FAIpQLSelYo-TjNZJpX_3ssE4r8g4TSpPLBg8VrNd-ewntQGg-P_DJw/viewform?usp=sf_link</string>
+    <string name="review_url">https://g.page/r/Cb1nhbC6FVtlEAg/review</string>
 </resources>

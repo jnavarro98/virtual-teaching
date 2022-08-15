@@ -1,15 +1,18 @@
 package com.virtualteaching.studentsmagnet.ui.welcome
 
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.virtualteaching.studentsmagnet.R
 import com.virtualteaching.studentsmagnet.components.adapters.IconButtonAdapter
 import com.virtualteaching.studentsmagnet.databinding.ActivityWelcomeBinding
 import com.virtualteaching.studentsmagnet.model.IconButton
+import com.virtualteaching.studentsmagnet.utils.launchUri
+
 
 class WelcomeActivity : AppCompatActivity() {
 
@@ -23,16 +26,22 @@ class WelcomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityWelcomeBinding.inflate(LayoutInflater.from(this))
         setContentView(binding.root)
-        val iconButtonAdapter = IconButtonAdapter { /*TODO: Call URI launcher here with it.intentUri*/ }
+
+        initUi()
+    }
+
+    private fun initUi() {
+        val iconButtonAdapter =
+            IconButtonAdapter { Intent().launchUri(it.intentUri, this) }
         binding.rvIconButtons.layoutManager = layoutManager
         binding.rvIconButtons.adapter = iconButtonAdapter
-        binding.rvIconButtons.addItemDecoration(DividerItemDecoration(this, layoutManager.orientation))
-
+        val divider = DividerItemDecoration(this, layoutManager.orientation)
+        getDrawable(R.drawable.divider_rv)?.let { divider.setDrawable(it) }
+        binding.rvIconButtons.addItemDecoration(divider)
         welcomeActivityViewModel.iconButtonLiveData.observe(this) {
             it?.let {
                 iconButtonAdapter.submitList(it as MutableList<IconButton>)
             }
         }
-
     }
 }

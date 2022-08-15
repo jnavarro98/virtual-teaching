@@ -33,8 +33,9 @@ class WelcomeViewModelFactory(private val context: Context) : ViewModelProvider.
             @Suppress("UNCHECKED_CAST")
             return WelcomeViewModel(
                 dataSource = DataSource.getDataSource(listOf(
-                    IconButton("Rate us", R.drawable.ic_black_star_filled, Uri.EMPTY),
-                    IconButton("Sign up", R.drawable.ic_baseline_menu_book, Uri.EMPTY)
+                    IconButton("Sign up", R.drawable.ic_baseline_app_registration, Uri.parse(context.getString(R.string.register_url))),
+                    IconButton("Check timetable", R.drawable.ic_baseline_calendar, Uri.parse(context.getString(R.string.calendar_url))),
+                    IconButton("Rate us", R.drawable.ic_black_star_filled, Uri.parse(context.getString(R.string.review_url)))
                 ))
             ) as T
         }
