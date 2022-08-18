@@ -20,7 +20,11 @@ fun launchIconButton(iconButton: IconButton, context: Context) {
                 try {
                     context.startActivity(intent)
                 } catch (exception: ActivityNotFoundException) {
-                    Toast.makeText(context, "Oops! An error has occurred", Toast.LENGTH_LONG).show()
+                    Toast.makeText(
+                        context,
+                        context.getString(R.string.generic_error_message),
+                        Toast.LENGTH_LONG
+                    ).show()
                 }
             }
         }

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name" translatable="false">Virtual Teaching</string>
+    <string name="app_name">Virtual Teaching</string>
     <string name="calendar_url" translatable="false">https://calendar.google.com/calendar/u/0/r?cid=dmlydHVhbHRlYWNoaW5nZXNAZ21haWwuY29t</string>
     <string name="register_url" translatable="false">https://docs.google.com/forms/d/e/1FAIpQLSelYo-TjNZJpX_3ssE4r8g4TSpPLBg8VrNd-ewntQGg-P_DJw/viewform?usp=sf_link</string>
     <string name="review_url" translatable="false">https://g.page/r/Cb1nhbC6FVtlEAg/review</string>
@@ -11,4 +11,5 @@
     <string name="follow_us">Follow us</string>
     <string name="contact_us">Contact us</string>
     <string name="title_app_name" translatable="false">VIRTUAL TEACHING</string>
+    <string name="generic_error_message">Oops! An error has occurred</string>
 </resources>
