@@ -40,7 +40,7 @@ class WelcomeViewModelFactory(private val context: Context) : ViewModelProvider.
             return WelcomeViewModel(
                 dataSource = DataSource.getDataSource(listOf(
                     IconButton(
-                        context.getString(R.string.sign_up),
+                        context.getString(R.string.info_and_sign_up),
                         R.drawable.ic_baseline_app_registration,
                         Uri.parse(context.getString(R.string.register_url))
                     ),
