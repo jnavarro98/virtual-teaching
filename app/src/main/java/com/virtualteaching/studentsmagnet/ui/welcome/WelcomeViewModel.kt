@@ -50,9 +50,9 @@ class WelcomeViewModelFactory(private val context: Context) : ViewModelProvider.
                         Uri.parse(context.getString(R.string.calendar_url))
                     ),
                     IconButton(
-                        context.getString(R.string.rate_us),
-                        R.drawable.ic_black_star_filled,
-                        Uri.parse(context.getString(R.string.review_url))
+                        context.getString(R.string.contact_us),
+                        R.drawable.ic_whatsapp,
+                        Uri.parse("https://api.whatsapp.com/send?phone=+34613550464")
                     ),
                     IconButton(
                         context.getString(R.string.follow_us),
@@ -61,9 +61,9 @@ class WelcomeViewModelFactory(private val context: Context) : ViewModelProvider.
                         "virtual.teaching.es"
                     ),
                     IconButton(
-                        context.getString(R.string.contact_us),
-                        R.drawable.ic_whatsapp,
-                        Uri.parse("https://api.whatsapp.com/send?phone=+34613550464")
+                        context.getString(R.string.rate_us),
+                        R.drawable.ic_black_star_filled,
+                        Uri.parse(context.getString(R.string.review_url))
                     )
                 ))
             ) as T
