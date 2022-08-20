@@ -33,7 +33,6 @@ class IconButtonAdapter(private val onClick: (IconButton) -> Unit) :
 
             iconButtonTitle.text = iconButton.title
             iconButtonIcon.setImageResource(iconButton.image)
-
         }
     }
 

@@ -34,13 +34,13 @@ class IconButtonView @JvmOverloads constructor(
     }
 
     var icon : Int = 0
-        set(imageId : Int) {
+        set(imageId) {
             field = imageId
             binding.ivIcon.setImageResource(icon)
         }
 
     var title : String? = ""
-        set(newTitle : String?) {
+        set(newTitle) {
             field = newTitle
             binding.tvIconTitle.text = title
         }

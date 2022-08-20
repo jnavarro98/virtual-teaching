@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import androidx.browser.customtabs.CustomTabsIntent
+import androidx.core.graphics.drawable.toBitmap
 import com.virtualteaching.studentsmagnet.R
 import com.virtualteaching.studentsmagnet.model.IconButton
 
@@ -16,7 +17,7 @@ fun IconButton.launch(context: Context) {
         }
         //Any intent with uri
         this.uri != Uri.EMPTY -> {
-            launchCustomTab(context, this.uri)
+            launchCustomTab(context, this)
         }
     }
 }
@@ -30,14 +31,14 @@ private fun launchInstagramProfile(iconButton: IconButton, context: Context) {
     if (intent.resolveActivity(context.packageManager) != null) {
         context.startActivity(intent)
     } else {
-        launchCustomTab(context, iconButton.uri)
+        launchCustomTab(context, iconButton)
     }
 }
 
-private fun launchCustomTab(context: Context, uri: Uri) {
+private fun launchCustomTab(context: Context, iconButton: IconButton) {
     val builder = CustomTabsIntent.Builder()
-    builder.setStartAnimations(context, R.anim.slide_up, R.anim.stay);
-    builder.setExitAnimations(context, R.anim.slide_down, R.anim.stay);
     val customTabsIntent = builder.build()
-    customTabsIntent.launchUrl(context, uri)
+    context.getDrawable(R.drawable.ic_baseline_arrow_back)
+        ?.let { builder.setCloseButtonIcon(it.toBitmap()) }
+    customTabsIntent.launchUrl(context, iconButton.uri)
 }
