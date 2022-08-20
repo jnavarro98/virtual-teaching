@@ -11,7 +11,7 @@ import com.virtualteaching.studentsmagnet.R
 import com.virtualteaching.studentsmagnet.components.adapters.IconButtonAdapter
 import com.virtualteaching.studentsmagnet.databinding.ActivityWelcomeBinding
 import com.virtualteaching.studentsmagnet.model.IconButton
-import com.virtualteaching.studentsmagnet.utils.launchIconButton
+import com.virtualteaching.studentsmagnet.utils.launch
 
 
 class WelcomeActivity : AppCompatActivity() {
@@ -32,7 +32,7 @@ class WelcomeActivity : AppCompatActivity() {
 
     private fun initUi() {
         val iconButtonAdapter =
-            IconButtonAdapter { launchIconButton(it, this) }
+            IconButtonAdapter { it.launch(this) }
         binding.rvIconButtons.layoutManager = layoutManager
         binding.rvIconButtons.adapter = iconButtonAdapter
         val divider = DividerItemDecoration(this, layoutManager.orientation)

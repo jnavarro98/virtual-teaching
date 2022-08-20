@@ -13,14 +13,11 @@ class WelcomeViewModel(val dataSource: DataSource) : ViewModel() {
     val iconButtonLiveData = dataSource.getIconButtonList()
 
     fun insertIconButton(
-        iconButtonIcon: Int?,
-        iconButtonTitle: String?,
-        uri: Uri?,
+        iconButtonIcon: Int,
+        iconButtonTitle: String,
+        uri: Uri,
         instagramProfile: String?
     ) {
-        if (iconButtonIcon == null || iconButtonTitle == null) {
-            return
-        }
         val newIconButton = IconButton(
             iconButtonTitle,
             iconButtonIcon,
@@ -57,8 +54,8 @@ class WelcomeViewModelFactory(private val context: Context) : ViewModelProvider.
                     IconButton(
                         context.getString(R.string.follow_us),
                         R.drawable.ic_instagram,
-                        Uri.EMPTY,
-                        "virtual.teaching.es"
+                        Uri.parse("https://instagram.com/${context.getString(R.string.instagram_virtual_teaching)}"),
+                        context.getString(R.string.instagram_virtual_teaching)
                     ),
                     IconButton(
                         context.getString(R.string.rate_us),

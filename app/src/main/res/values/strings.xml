@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Virtual Teaching</string>
     <string name="calendar_url" translatable="false">https://calendar.google.com/calendar/embed?height=600&amp;wkst=2&amp;bgcolor=%23ece6ff&amp;ctz=Europe%2FMadrid&amp;mode=AGENDA&amp;showTitle=0&amp;showNav=0&amp;showDate=1&amp;showTabs=0&amp;showCalendars=1&amp;src=dmlydHVhbHRlYWNoaW5nZXNAZ21haWwuY29t&amp;src=ZW4uc3BhaW4jaG9saWRheUBncm91cC52LmNhbGVuZGFyLmdvb2dsZS5jb20&amp;color=%23039BE5&amp;color=%230B8043</string>
-    <string name="register_url" translatable="false">https://forms.gle/mL3VK5qKFS5H8PHf9</string>
+    <string name="register_url" translatable="false">https://docs.google.com/forms/d/e/1FAIpQLSdyMmMOqTQzCh0Y-r6f2z5rlp7XAmS3sKs33GxjUL4bzTD3xw/viewform?usp=sf_link</string>
     <string name="review_url" translatable="false">https://g.page/r/Cb1nhbC6FVtlEAg/review</string>
     <string name="subtitle"><u>Learning in your hands</u></string>
     <string name="instagram_package_id" translatable="false">com.instagram.android</string>
@@ -12,4 +12,5 @@
     <string name="contact_us">Contact us</string>
     <string name="title_app_name" translatable="false">VIRTUAL TEACHING</string>
     <string name="generic_error_message">Oops! An error has occurred</string>
+    <string name="instagram_virtual_teaching" translatable="false">virtual.teaching.es</string>
 </resources>
