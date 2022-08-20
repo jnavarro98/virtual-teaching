@@ -5,14 +5,14 @@ import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.widget.LinearLayout
 import com.virtualteaching.studentsmagnet.R
-import com.virtualteaching.studentsmagnet.databinding.IconButtonViewBinding
+import com.virtualteaching.studentsmagnet.databinding.ViewIconButtonBinding
 
 class IconButtonView @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null
 ) : LinearLayout(context, attrs) {
 
-    private val binding = IconButtonViewBinding.inflate(LayoutInflater.from(context), this, true)
+    private val binding = ViewIconButtonBinding.inflate(LayoutInflater.from(context), this, true)
 
     init {
         attrs?.let { setAttributes(context, it) }
@@ -34,15 +34,15 @@ class IconButtonView @JvmOverloads constructor(
     }
 
     var icon : Int = 0
-        set(imageId : Int) {
+        set(imageId) {
             field = imageId
             binding.ivIcon.setImageResource(icon)
         }
 
     var title : String? = ""
-        set(newTitle : String?) {
+        set(newTitle) {
             field = newTitle
-            binding.tvTitle.text = title
+            binding.tvIconTitle.text = title
         }
 
 }
